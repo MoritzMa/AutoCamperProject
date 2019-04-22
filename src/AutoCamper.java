@@ -3,6 +3,8 @@ public abstract class  AutoCamper {
     String description;
     boolean tankIsfull;
     int autoCamperNo;
+    String photoPath;
+    double price;
 
 
     public AutoCamper() {
@@ -12,6 +14,10 @@ public abstract class  AutoCamper {
         autoCamperNo = 0; //TODO SP Hvor man finder MaxId no og indsætter her.
     }
 
+
+    public void setPhotoPath(String photoPath) {
+        this.photoPath = photoPath;
+    }
     public boolean isAvalible() {
         return isAvalible;
     }
@@ -44,6 +50,20 @@ public abstract class  AutoCamper {
         this.autoCamperNo = autoCamperNo;
     }
 
+    public String getPhotoPath() {
+        return photoPath;
+    }
+
+
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
     @Override
     public String toString() {
         return "AutoCamper{" +
@@ -51,6 +71,8 @@ public abstract class  AutoCamper {
                 ", description='" + description + '\'' +
                 ", tankIsfull=" + tankIsfull +
                 ", autoCamperNo=" + autoCamperNo +
+                ", photoPath='" + photoPath + '\'' +
+                ", price=" + price +
                 '}';
     }
 

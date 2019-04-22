@@ -1,9 +1,9 @@
 public class Basic extends AutoCamper {
-   private double price;
+
    private double tankSize;
     Basic() {
         super();
-        this.price = 100; //TODO Find  ud af hvilken Standard
+        super.price = 100; //TODO Find  ud af hvilken Standard
         this.tankSize = 50; //TODO Find ud af hvilken Standard
         //TODO Insert into DB
     }
@@ -48,17 +48,7 @@ public class Basic extends AutoCamper {
         super.setAutoCamperNo(autoCamperNo);
     }
 
-    @Override
-    public String toString() {
-        return  "AutoCamper(Basic){" +
-                "isAvalible=" + isAvalible +
-                ", description='" + description + '\'' +
-                ", tankIsfull=" + tankIsfull +
-                ", autoCamperNo=" + autoCamperNo +
-                ", prise= "+price+
-                ", tankSize"+tankSize+
-                '}';
-    }
+
 
     public double getPrice() {
         return price;
@@ -77,4 +67,16 @@ public class Basic extends AutoCamper {
     }
 
 
+    @Override
+    public String toString() {
+        return "\nBasic{" +
+                "price=" + price +
+                ", tankSize=" + tankSize +
+                ", isAvalible=" + isAvalible +
+                ", description='" + description + '\'' +
+                ", tankIsfull=" + tankIsfull +
+                ", autoCamperNo=" + autoCamperNo +
+                ", photoPath='" + photoPath + '\'' +
+                '}';
+    }
 }

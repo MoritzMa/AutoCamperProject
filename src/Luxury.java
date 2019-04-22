@@ -1,9 +1,9 @@
 public class Luxury extends AutoCamper {
-    private double price;
+
     private double tankSize;
     Luxury() {
         super();
-        this.price = 500; //TODO Find  ud af hvilken Standard
+        super.price = 500; //TODO Find  ud af hvilken Standard
         this.tankSize = 150; //TODO Find ud af hvilken Standard
         //TODO Insert into DB
     }
@@ -48,18 +48,6 @@ public class Luxury extends AutoCamper {
         super.setAutoCamperNo(autoCamperNo);
     }
 
-    @Override
-    public String toString() {
-        return  "AutoCamper(Luxury){" +
-                "isAvalible=" + isAvalible +
-                ", description='" + description + '\'' +
-                ", tankIsfull=" + tankIsfull +
-                ", autoCamperNo=" + autoCamperNo +
-                ", prise= "+price+
-                ", tankSize"+tankSize+
-                '}';
-    }
-
     public double getPrice() {
         return price;
     }
@@ -74,5 +62,18 @@ public class Luxury extends AutoCamper {
 
     public void setTankSize(double tankSize) {
         this.tankSize = tankSize;
+    }
+
+    @Override
+    public String toString() {
+        return "\nLuxury{" +
+                "price=" + price +
+                ", tankSize=" + tankSize +
+                ", isAvalible=" + isAvalible +
+                ", description='" + description + '\'' +
+                ", tankIsfull=" + tankIsfull +
+                ", autoCamperNo=" + autoCamperNo +
+                ", photoPath='" + photoPath + '\'' +
+                '}';
     }
 }
