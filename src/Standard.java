@@ -3,9 +3,11 @@ public class Standard extends AutoCamper{
         private double tankSize;
         Standard() {
             super();
-            super.price = 150; //TODO Find  ud af hvilken Standard
-            this.tankSize = 100; //TODO Find ud af hvilken Standard
-            //TODO Insert into DB
+            double price = 300;
+            String description = "defult";
+           // super.autoCamperNo=super.addAutoCamper(""+ price,description,"Basic");
+            super.price = price;
+            this.tankSize = 100;
         }
 
         @Override

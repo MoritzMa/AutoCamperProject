@@ -3,9 +3,11 @@ public class Luxury extends AutoCamper {
     private double tankSize;
     Luxury() {
         super();
-        super.price = 500; //TODO Find  ud af hvilken Standard
-        this.tankSize = 150; //TODO Find ud af hvilken Standard
-        //TODO Insert into DB
+        double price = 500;
+        String description = "defult";
+        //super.autoCamperNo=super.addAutoCamper(""+ price,description,"Basic");
+        super.price = price;
+        this.tankSize = 150;
     }
 
     @Override

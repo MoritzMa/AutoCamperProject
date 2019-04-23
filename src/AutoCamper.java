@@ -1,3 +1,4 @@
+import java.sql.*;
 public abstract class  AutoCamper {
     boolean isAvalible;
     String description;
@@ -39,7 +40,10 @@ public abstract class  AutoCamper {
     }
 
     public void setDescription(String description) {
+
         this.description = description;
+        int id = this.autoCamperNo;
+        //updateDescrip(description,""+id );
     }
 
     public void setTankIsfull(boolean tankIsfull) {
@@ -75,7 +79,44 @@ public abstract class  AutoCamper {
                 ", price=" + price +
                 '}';
     }
+    public void updateDescrip(String Description, String Id)
+    {
+        try {
+            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+            Connection con =
+                    DriverManager.getConnection("jdbc:sqlserver://localhost:1433;databaseName=dbAutocamper", "sa", "password");
+            PreparedStatement ps = con.prepareStatement("EXECUTE dbo.updateDescription @description = ?, @Id = ? ");
+            ps.setString(1, Description);
+            ps.setString(2, Id );
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
+        //public AutoCamper();
+    }
+
+    public int addAutoCamper(String Price, String Description, String Type)
+    {
+        try {
+            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+            Connection con =
+                    DriverManager.getConnection("jdbc:sqlserver://localhost:1433;databaseName=dbAutocamper", "sa", "password");
+                            PreparedStatement ps = con.prepareStatement("EXECUTE dbo.addAutoCamper @price = ?, @Description = ?, @type = ?");
+            ps.setString(1, Price);
+            ps.setString(2, Description);
+            ps.setString(3,Type);
+
+            ResultSet rs = ps.executeQuery();
+            int Id = rs.getInt(1);
+
+            return Id;
+        } catch (Exception e) {
+            e.printStackTrace();
+        } return 0;
 
 
     //public AutoCamper();
+}
 }
